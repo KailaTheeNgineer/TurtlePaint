@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TurtlePaint:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TurtlePaint_jar</output-path>
+    <root id="archive" name="TurtlePaint.jar">
+      <element id="module-output" name="TurtlePaint" />
+    </root>
+  </artifact>
+</component>
