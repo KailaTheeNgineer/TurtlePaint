@@ -1,10 +1,12 @@
-package com.pluralsight;
+package com.pluralsight.shapes;
+
+import com.pluralsight.Turtle;
 
 import java.awt.*;
 
 public class Circle extends Shape {
-    public Circle(Turtle userTurtle, Point location, Color color, int border) {
-        super(userTurtle, location, color, border);
+    public Circle(Point location, Color color, int border) {
+        super(location, color, border);
     }
 
     @Override

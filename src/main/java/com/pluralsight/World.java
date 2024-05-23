@@ -1,3 +1,5 @@
+package com.pluralsight;
+
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -22,11 +24,11 @@ import javax.swing.JLabel;
  * A world for turtles to play inside of.
  * Usage example:
  * <pre>
- * World basic = new World();
- * World fancy = new World(640, 480, Color.YELLOW);
+ * com.pluralsight.World basic = new com.pluralsight.World();
+ * com.pluralsight.World fancy = new com.pluralsight.World(640, 480, Color.YELLOW);
  *
- * Turtle t1 = new Turtle(basic);
- * Turtle t2 = new Turtle(fancy);
+ * com.pluralsight.Turtle t1 = new com.pluralsight.Turtle(basic);
+ * com.pluralsight.Turtle t2 = new com.pluralsight.Turtle(fancy);
  *
  * t1.forward(100);
  * basic.erase();
@@ -58,7 +60,7 @@ public class World extends JFrame {
 
 
     /**
-     * Creates a new World for Turtles to play in.
+     * Creates a new com.pluralsight.World for Turtles to play in.
      */
     public World() {
         this(600, 600);
@@ -67,7 +69,7 @@ public class World extends JFrame {
         this(width, height, Color.WHITE);
     }
     public World(int width, int height, Color backgroundColor) {
-        super("Turtle World");
+        super("com.pluralsight.Turtle com.pluralsight.World");
         this.centerX = width/2;
         this.centerY = height/2;
 
@@ -125,14 +127,14 @@ public class World extends JFrame {
 
 
     /**
-     * Should only called by the Turtle class constructor
+     * Should only called by the com.pluralsight.Turtle class constructor
      */
     void addTurtle(Turtle t) {
         this.turtles.add(t);
         this.turtleMoved();
     }
     /**
-     * Should only called by Turtle class methods
+     * Should only called by com.pluralsight.Turtle class methods
      */
     void drawLine(Point2D p1, Point2D p2, double width, Color color) {
         // draw the line
@@ -153,13 +155,13 @@ public class World extends JFrame {
     }
 
     /**
-     * Should only called by Turtle class methods
+     * Should only called by com.pluralsight.Turtle class methods
      */
     void drawLine(Point2D p1, double nx, double ny, double width, Color color) {
         this.drawLine(p1,  new Point2D.Double(nx,ny), width, color);
     }
     /**
-     * Should only called by Turtle class methods
+     * Should only called by com.pluralsight.Turtle class methods
      */
     void turtleMoved() {
         // show the drawn lines
@@ -193,7 +195,7 @@ public class World extends JFrame {
     }
 
     /**
-     * To be used by Turtle class only
+     * To be used by com.pluralsight.Turtle class only
      * @param img the Image to draw
      * @param placement the Affine Transform to use in drawing it
      */

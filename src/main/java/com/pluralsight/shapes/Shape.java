@@ -1,7 +1,10 @@
-package com.pluralsight;
+package com.pluralsight.shapes;
 
-import javax.swing.border.Border;
+import com.pluralsight.Turtle;
+
+
 import java.awt.*;
+import java.util.Locale;
 
 public abstract class Shape {
     protected Turtle userTurtle;
@@ -9,8 +12,7 @@ public abstract class Shape {
     protected Color color;
     protected int border;
 
-    public Shape(Turtle userTurtle, Point location, Color color, int border) {
-        this.userTurtle = userTurtle;
+    public Shape(Point location, Color color, int border) {
         this.location = location;
         this.color = color;
         this.border = border;
@@ -48,5 +50,9 @@ public abstract class Shape {
         this.border = border;
     }
 
+    // abstract method for paint
     public abstract void paint();
+
+
+
 }
