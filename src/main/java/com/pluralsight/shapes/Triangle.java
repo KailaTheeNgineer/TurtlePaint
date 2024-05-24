@@ -8,8 +8,10 @@ public class Triangle extends Shape {
     int base; // getting base length of triangle
     int height; // getting height of triangle
 
-    public Triangle (Point location, Color color, int border, Turtle userTurtle) {
+    public Triangle (Point location, Color color, int border, Turtle userTurtle, int base , int height) {
         super(location, color, border, userTurtle);
+        this.base = base;
+        this.height = height;
     }
 
     @Override

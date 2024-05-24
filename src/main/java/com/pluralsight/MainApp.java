@@ -2,7 +2,9 @@ package com.pluralsight;
 
 
 
+import com.pluralsight.shapes.Circle;
 import com.pluralsight.shapes.Square;
+import com.pluralsight.shapes.Triangle;
 
 import java.awt.*;
 import java.util.*;
@@ -51,6 +53,7 @@ public class MainApp {
 
             }
 
+
         }
     }
 
@@ -93,7 +96,7 @@ public class MainApp {
                 int squareSide = myScanner.nextInt(); // getting input for length
                 System.out.println("Generating image...");
                 Square userSquare = new Square(location, color, border, userTurtle, squareSide);
-
+                    userSquare.paint(world.getGraphics());
 
 
 
@@ -101,16 +104,26 @@ public class MainApp {
 
             } else if (shapeInput == 2) {
                 System.out.println("Enter radius of circle : ");
-                int circleRadius = myScanner.nextInt();// getting radius input
+                int circleRadius = myScanner.nextInt(); // getting radius input
+
+                System.out.println("Generating image...");
+                Circle userCircle = new Circle(location, color, border, userTurtle, circleRadius);
+                userCircle.paint(world.getGraphics());
+
             } else if (shapeInput == 3) {
                 System.out.println("Enter base of Triangle: ");
                 int base = myScanner.nextInt();
                 System.out.println("Enter height of triangle: ");
                 int height = myScanner.nextInt();
+
+                System.out.println("Generating image...");
+                Triangle userTriangle = new Triangle(location, color, border, userTurtle, base, height);
+                userTriangle.paint(world.getGraphics());
             }
 
             // Adding shapes to array list
             shapes.add(shape);
+
 
             // asking user if they would like to make another shape
             myScanner.nextLine();

@@ -7,7 +7,7 @@ import java.awt.*;
 public class Circle extends Shape {
     int radius ;
 
-    public Circle(Point location, Color color, int border, Turtle userTurtle) {
+    public Circle(Point location, Color color, int border, Turtle userTurtle, int radius) {
         super(location, color, border, userTurtle);
         this.radius = radius;
     }
