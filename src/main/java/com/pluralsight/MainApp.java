@@ -22,21 +22,6 @@ public class MainApp {
         World world = new World(500, 500); // Create a new World with specified width and height
         Turtle userTurtle = new Turtle(world, -100, -100); // Create a new Turtle at the specified location
 
-        userTurtle.setPenWidth(2);
-        userTurtle.setColor(Color.RED);
-        // Pythagorean Theorem
-        double base =60;
-        double height =60;
-        double triangleLength = Math.sqrt(Math.pow(base / 2.0,2) + Math.pow(height,2));
-
-        userTurtle.turnRight(0);
-        userTurtle.penDown();
-        userTurtle.forward(base);
-        userTurtle.turnRight(120);
-        userTurtle.forward(triangleLength);
-        userTurtle.turnRight(120);
-        userTurtle.forward(triangleLength);
-        userTurtle.penUp();
 
         boolean home = true;
 
@@ -96,13 +81,24 @@ public class MainApp {
             // System.out.print(x + "," + y);
             Point location = new Point(x, y);
 
+            // The world is your canvas
+            World world = new World(500, 500); // Create a new World with specified width and height
+            Turtle userTurtle = new Turtle(world, -100, -100); // Create a new Turtle at the specified location
+
 
             // Creating shape based on user input
-
             Shape shape = null;
             if (shapeInput == 1) {
                 System.out.println("Enter side length of Square: ");
                 int squareSide = myScanner.nextInt(); // getting input for length
+                System.out.println("Generating image...");
+                Square userSquare = new Square(location, color, border, userTurtle, squareSide);
+
+
+
+
+
+
             } else if (shapeInput == 2) {
                 System.out.println("Enter radius of circle : ");
                 int circleRadius = myScanner.nextInt();// getting radius input
@@ -112,6 +108,7 @@ public class MainApp {
                 System.out.println("Enter height of triangle: ");
                 int height = myScanner.nextInt();
             }
+
             // Adding shapes to array list
             shapes.add(shape);
 

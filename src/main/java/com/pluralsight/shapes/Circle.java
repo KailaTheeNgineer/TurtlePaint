@@ -15,6 +15,24 @@ public class Circle extends Shape {
     @Override
     public void paint(Graphics g) {
 
+        userTurtle.setPenWidth(border);
+        userTurtle.setColor(color);
+
+
+        int steps = 100; // specifying the number of small segments of steps to make the circle
+        double angle = 360.00 / steps;
+        double steplength = 2 * Math.PI * radius / steps;
+
+        userTurtle.turnRight(0);
+        userTurtle.penDown();
+
+        for(int i = 0; i < steps; i ++) {
+            userTurtle.forward(steplength);
+            userTurtle.turnRight(angle);
+
+        }
+        userTurtle.penUp();
+
 
     }
 }
