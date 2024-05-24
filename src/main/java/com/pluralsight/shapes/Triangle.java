@@ -22,7 +22,7 @@ public class Triangle extends Shape {
 
 
         // Pythagorean Theorem
-        double triangleLength = Math.sqrt(Math.pow(base / 2.0,2) + Math.pow(height,2));
+        double triangleLength = Math.sqrt(Math.pow(base / 2, 2) + Math.pow(height, 2));
 
         userTurtle.turnRight(0);
         userTurtle.penDown();

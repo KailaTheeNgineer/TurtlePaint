@@ -12,18 +12,13 @@ import java.util.*;
 
 public class MainApp {
     public static Scanner myScanner = new Scanner(System.in);
-    public static ArrayList <Shape>  shapes = new ArrayList<>(); // creating the list of shapes
+    public static ArrayList <Shape>  shapes = new ArrayList<>();// creating the list of shapes
 
 
     public static void main(String[] args) {
 
         // This starter code to get you familiar with how
         // the TurtleLogo application works
-
-        // The world is your canvas
-        World world = new World(500, 500); // Create a new World with specified width and height
-        Turtle userTurtle = new Turtle(world, -100, -100); // Create a new Turtle at the specified location
-
 
         boolean home = true;
 
@@ -94,12 +89,10 @@ public class MainApp {
             if (shapeInput == 1) {
                 System.out.println("Enter side length of Square: ");
                 int squareSide = myScanner.nextInt(); // getting input for length
-                System.out.println("Generating image...");
+                System.out.println("\nGenerating image...");
+
                 Square userSquare = new Square(location, color, border, userTurtle, squareSide);
                     userSquare.paint(world.getGraphics());
-
-
-
 
 
             } else if (shapeInput == 2) {
@@ -107,6 +100,7 @@ public class MainApp {
                 int circleRadius = myScanner.nextInt(); // getting radius input
 
                 System.out.println("Generating image...");
+
                 Circle userCircle = new Circle(location, color, border, userTurtle, circleRadius);
                 userCircle.paint(world.getGraphics());
 
@@ -117,6 +111,7 @@ public class MainApp {
                 int height = myScanner.nextInt();
 
                 System.out.println("Generating image...");
+
                 Triangle userTriangle = new Triangle(location, color, border, userTurtle, base, height);
                 userTriangle.paint(world.getGraphics());
             }
