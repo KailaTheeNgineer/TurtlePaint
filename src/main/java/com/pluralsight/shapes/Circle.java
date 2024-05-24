@@ -5,12 +5,16 @@ import com.pluralsight.Turtle;
 import java.awt.*;
 
 public class Circle extends Shape {
-    public Circle(Point location, Color color, int border) {
-        super(location, color, border);
+    int radius ;
+
+    public Circle(Point location, Color color, int border, Turtle userTurtle) {
+        super(location, color, border, userTurtle);
+        this.radius = radius;
     }
 
     @Override
-    public void paint() {
+    public void paint(Graphics g) {
+
 
     }
 }

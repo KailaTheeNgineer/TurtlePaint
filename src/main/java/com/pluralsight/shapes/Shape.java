@@ -12,10 +12,11 @@ public abstract class Shape {
     protected Color color;
     protected int border;
 
-    public Shape(Point location, Color color, int border) {
+    public Shape(Point location, Color color, int border, Turtle userTurtle) {
         this.location = location;
         this.color = color;
         this.border = border;
+        this.userTurtle = userTurtle;
     }
 
     public Turtle getUserTurtle() {
@@ -51,7 +52,7 @@ public abstract class Shape {
     }
 
     // abstract method for paint
-    public abstract void paint();
+    public abstract void paint(Graphics g);
 
 
 

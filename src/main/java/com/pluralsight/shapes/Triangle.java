@@ -5,12 +5,32 @@ import com.pluralsight.Turtle;
 import java.awt.*;
 
 public class Triangle extends Shape {
-    public Triangle (Point location, Color color, int border) {
-        super(location, color, border);
+    int base; // getting base length of triangle
+    int height; // getting height of triangle
+
+    public Triangle (Point location, Color color, int border, Turtle userTurtle) {
+        super(location, color, border, userTurtle);
     }
 
     @Override
-    public void paint() {
+    public void paint(Graphics g) {
+
+        userTurtle.setPenWidth(border);
+        userTurtle.setColor(color);
+
+
+        // Pythagorean Theorem
+        double triangleLength = Math.sqrt(Math.pow(base / 2.0,2) + Math.pow(height,2));
+
+        userTurtle.turnRight(0);
+        userTurtle.penDown();
+        userTurtle.forward(base);
+        userTurtle.turnRight(120);
+        userTurtle.forward(triangleLength);
+        userTurtle.turnRight(120);
+        userTurtle.forward(triangleLength);
+        userTurtle.penUp();
+
 
     }
 }

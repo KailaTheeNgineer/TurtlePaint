@@ -5,16 +5,38 @@ package com.pluralsight;
 import com.pluralsight.shapes.Square;
 
 import java.awt.*;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class MainApp {
     public static Scanner myScanner = new Scanner(System.in);
+    public static ArrayList <Shape>  shapes = new ArrayList<>(); // creating the list of shapes
+
 
     public static void main(String[] args) {
 
+        // This starter code to get you familiar with how
+        // the TurtleLogo application works
+
+        // The world is your canvas
+        World world = new World(500, 500); // Create a new World with specified width and height
+        Turtle userTurtle = new Turtle(world, -100, -100); // Create a new Turtle at the specified location
+
+        userTurtle.setPenWidth(2);
+        userTurtle.setColor(Color.RED);
+        // Pythagorean Theorem
+        double base =60;
+        double height =60;
+        double triangleLength = Math.sqrt(Math.pow(base / 2.0,2) + Math.pow(height,2));
+
+        userTurtle.turnRight(0);
+        userTurtle.penDown();
+        userTurtle.forward(base);
+        userTurtle.turnRight(120);
+        userTurtle.forward(triangleLength);
+        userTurtle.turnRight(120);
+        userTurtle.forward(triangleLength);
+        userTurtle.penUp();
 
         boolean home = true;
 
@@ -61,13 +83,12 @@ public class MainApp {
             System.out.println("Select a Shape: \n1. Square\n2. Circle\n3.Triangle");
             int shapeInput = myScanner.nextInt();
             myScanner.nextLine();
-            System.out.println("Enter shape width: ");
+            System.out.println("Enter border width: ");
             int border = myScanner.nextInt();
             myScanner.nextLine();
             System.out.println("Enter shape color: ");
             String color2 = myScanner.nextLine();
             Color color = convertedColor(color2);
-            myScanner.nextLine();
             System.out.println("Enter location (x): ");
             int x = myScanner.nextInt();
             System.out.println("Enter location (y): ");
@@ -81,12 +102,18 @@ public class MainApp {
             Shape shape = null;
             if (shapeInput == 1) {
                 System.out.println("Enter side length of Square: ");
-                int squareSide = myScanner.nextInt();
-                // shape = new Square();
-
-
+                int squareSide = myScanner.nextInt(); // getting input for length
+            } else if (shapeInput == 2) {
+                System.out.println("Enter radius of circle : ");
+                int circleRadius = myScanner.nextInt();// getting radius input
+            } else if (shapeInput == 3) {
+                System.out.println("Enter base of Triangle: ");
+                int base = myScanner.nextInt();
+                System.out.println("Enter height of triangle: ");
+                int height = myScanner.nextInt();
             }
-
+            // Adding shapes to array list
+            shapes.add(shape);
 
             // asking user if they would like to make another shape
             myScanner.nextLine();
@@ -100,7 +127,6 @@ public class MainApp {
                 System.out.println("\nEnter a Valid Option");
 
             }
-
 
         }
     }
@@ -119,6 +145,7 @@ public class MainApp {
         colorMap.put("red", Color.RED);
         colorMap.put("white", Color.WHITE);
         colorMap.put("yellow", Color.YELLOW);
+
 
         color.trim().toLowerCase();
 
